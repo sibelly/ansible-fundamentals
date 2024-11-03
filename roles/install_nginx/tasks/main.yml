@@ -1,5 +1,5 @@
 ---
-- name: Install nginx
+- name: install libs
   apt:
     pkg:
       - nginx
@@ -8,7 +8,7 @@
     state: present
     update_cache: yes
 
-- name: Init nginx
+- name: init nginx
   service:
     name: nginx
     state: started
@@ -23,7 +23,7 @@
     src: package.json
     dest: /app/package.json
 
-- name: npm Install
+- name: npm install
   npm:
     path: /app
     state: present
